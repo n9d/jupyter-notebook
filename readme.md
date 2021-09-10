@@ -1,5 +1,10 @@
 # dockerで動くjupyter notebook
 
+## 対応言語
+
+- python
+- ruby
+
 ## 起動方法
 
 ```
