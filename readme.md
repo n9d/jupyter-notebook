@@ -4,6 +4,8 @@
 
 - python
 - ruby
+- javascript
+- spark(pyspark)
 
 ## 起動方法
 
@@ -20,9 +22,5 @@ docker-compose up
 
 - カレントのworkにできる
 
-## やりたいこと
-
-- nodeにも対応したいところ
-- pysparkとは共存させない
 
 

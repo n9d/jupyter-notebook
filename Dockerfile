@@ -1,13 +1,18 @@
-FROM python:3
+FROM jupyter/pyspark-notebook
+#FROM jupyter/base-notebook
+
 USER root
 
-RUN apt update && \
-    apt -y install jupyter-notebook ruby ruby-ffi-rzmq && \
-    gem install iruby && \
-    iruby register --force
-ENV LANG ja_JP.UTF-8
-ENV LANGUAGE ja_JP:ja
-ENV LC_ALL ja_JP.UTF-8
-ENV TZ JST-9
+RUN apt update
 
-CMD ["jupyter-notebook", "--port", "8000", "--ip=0.0.0.0", "--allow-root"]
+# install iruby
+RUN apt install -y ruby ruby-ffi-rzmq
+RUN gem install iruby
+RUN iruby register --force
+
+# install ijs
+RUN npm install -g ijavascript
+RUN ijsinstall
+
+RUN chown -R 1000:1000 /home/jovyan
+

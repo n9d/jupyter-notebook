@@ -4,9 +4,9 @@ services:
     build:
       context: ./
     ports:
-      - 8888:8000
+      - 8888:8888
     volumes:
-      - ./work:/work
-      - ./config:/root/.jupyter
+      - ./work:/home/jovyan/work
+      - ./config:/home/jovyan/.jupyter
+    working_dir: /home/jovyan/work
     tty: true
-    working_dir: /work
