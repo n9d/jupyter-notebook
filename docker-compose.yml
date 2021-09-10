@@ -9,3 +9,4 @@ services:
       - ./work:/work
       - ./config:/root/.jupyter
     tty: true
+    working_dir: /work
